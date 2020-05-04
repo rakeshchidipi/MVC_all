@@ -1,0 +1,24 @@
+﻿@model  MVC_all.Models.EmpView
+@{
+    ViewBag.Title = "Employees";
+}
+
+<h2>Emp Details</h2>
+
+<div>
+    <ul>
+        <div>            
+            <li>Name : @Model.name</li>
+            <li>Salary : @Model.salary</li>
+            <li>Dept : @Model.deptid</li>
+        </div>
+        <div>
+           
+            @*<input type="submit" value="Add New" id="btnaddnew" onclick="location.href='@Url.Action("add","emp",new {  })'"  />*@
+            <input type="submit" value="Edit" id="btnedit" onclick="location.href='@Url.Action("getedit","emp",new { id=Model.id })'" />
+            <input type="submit" value="Back" id="btnback" onclick="location.href='@Url.Action("index","emp",new { })'"/>
+        </div>
+    </ul>
+
+</div>
+

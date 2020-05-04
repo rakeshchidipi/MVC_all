@@ -1,0 +1,50 @@
+﻿@model MVC_all.Models.EmpView
+@{
+    ViewBag.Title = "EmpEdit";
+}
+
+<h2>EmpEdit</h2>
+<script type="text/javascript">
+    function selectedvalue(ctl) {
+        alert(ctl.id);
+    }
+</script>
+<div>
+
+    @using (Html.BeginForm("add", "emp"))
+    {
+
+    <ul style="padding-bottom:10px">
+
+        @*<li style="padding-bottom:10px">  Gender : @Html.DropDownList("ddlgen", new List<SelectListItem>() { new SelectListItem { Text = "male" }, new SelectListItem { Text = "female" } }, "select gender", new { onchange = "selectedvalue(this)" }) </li>*@
+
+        @*<li>@Html.DropDownListFor("",)</li>*@
+
+        @*<li>@Html.DropDownList("ddlgg", Model.genderList.Select(m => new SelectListItem { Text = m.type, Value = m.id.ToString() }), "select type")</li>*@
+
+        @*<li style="padding-bottom:10px"> Gender  : @Html.DropDownListFor(Model => Model.gender, Model.genderList.Select(m => new SelectListItem { Text = m.type, Value = m.id.ToString(),Selected=m.id==2 ?true : false }), "select your type")</li>*@
+
+
+        @*<li style="padding-bottom:10px"> Gender1  : @Html.DropDownListFor(Model => Model.gender, (SelectList)ViewBag.genderlist, "select your type")</li>*@
+
+        <li style="padding-bottom:10px"> Gender  : @Html.DropDownListFor(Model => Model.gender, new SelectList(Model.genderList, "id", "type", Model.gender), "select your type")</li>
+        <li style="padding-bottom:10px"> id : <input type="text" id="txtname" name="id" value="@Model.id " /> </li>
+        <li style="padding-bottom:10px"> Name : <input type="text" id="txtname" name="name" value="@Model.name " /> </li>
+        <li style="padding-bottom:10px"> salary : <input type="text" id="txtsalary" name="salary" value="@Model.salary" />  </li>
+        <li style="padding-bottom:10px"> deptid : <input type="text" id="txtdeptid" name="deptid" value="@Model.deptid" />  </li>
+
+        <li style="padding-bottom:10px">
+            <input id="btnadd" type="submit" value="save" />
+
+            <input id="btnback" type="button" value="back" onclick="location.href='@Url.Action("index")'" />
+        </li>
+
+
+
+    </ul>
+        }
+
+        
+
+</div>
+

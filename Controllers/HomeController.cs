@@ -26,5 +26,18 @@ namespace MVC_all.Controllers
 
             return View();
         }
+
+
+        //public string Name()
+        //{
+        //    return "Rakesh";
+        //}
+
+        
+        public string Name(int id1)
+        {
+            int id = 1;
+            return id.ToString();
+        }
     }
 }

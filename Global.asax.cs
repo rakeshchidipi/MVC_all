@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using MVC_all.App_Start;
 
 namespace MVC_all
 {
@@ -16,6 +17,10 @@ namespace MVC_all
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            // for autofac IOC - inversion of dependency container
+            ContainerConfig.RegisterContainer();
+
+           
         }
     }
 }

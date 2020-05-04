@@ -1,0 +1,38 @@
+﻿@using MVC_all.Models;
+@{
+    ViewBag.Title = "EmpList";
+}
+@model List<MVC_all.Models.EmpView>
+
+<h2>EmpList</h2>
+
+
+
+<table>
+    <tr><td>@Html.DisplayNameFor(Model => Model.First().name) </td><td style="width:20px"></td> <td>  @Html.DisplayNameFor(Model => Model.First().deptid)</td></tr>
+    @foreach (EmpView emp in Model)
+    {
+        <tr>
+            <td>@Html.Label("name", emp.name)</td>
+            <td style="width:20px"></td>
+            <td>@Html.DisplayFor(k => emp.salary)</td>
+            <td style="width:20px"></td>
+            <td>@Html.ActionLink("view", "get", new { id = emp.id })</td>
+            <td style="width:20px"></td>
+            <td>@Html.ActionLink("edit", "getedit", new { id = emp.id })</td>
+        </tr>
+
+    }
+
+    <tr><td> </td><td style="width:20px"></td> <td></td><td></td><td></td><td></td> <td> <input type="submit" name="addnew" value="addnew" id="btnaddnew" onclick="location.href='@Url.Action("addnew")'"/>  </td></tr>
+
+</table>
+
+
+    
+   
+
+
+   
+
+
